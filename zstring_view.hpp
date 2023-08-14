@@ -58,6 +58,7 @@ namespace mpt
         constexpr basic_zstring_view(basic_zstring_view&& other) noexcept = default;
         constexpr basic_zstring_view(const CharT* s) : m_view{s} {}
         constexpr basic_zstring_view(const std::basic_string<CharT>& s) : m_view{ s } {}
+        constexpr basic_zstring_view(nullptr_t) noexcept = delete;
         ~basic_zstring_view() = default;
 
         // Needed as a workaround for gcc bug #61648
